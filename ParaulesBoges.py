@@ -9,7 +9,7 @@ i una foto de la seva cara feta amb caràcters ASCII.
 import random
 import string
 
-#region funcions
+#region Funcions
 def crear_lista(text):
     # Transformem l'input en una llista, separant-lo per paraules.
     llista_text = text.split()
