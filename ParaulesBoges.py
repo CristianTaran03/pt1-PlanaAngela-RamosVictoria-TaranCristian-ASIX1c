@@ -2,6 +2,8 @@
 Angela Plana, Victoria Ramos, Cristian Taran
 27/02/2024
 ASIXc M03 UF2 A1
+
+Programa que canviï l'ordre de les paraules del input, deixant la primera i la ultima al seu lloc original.
 """
 import random
 import string
@@ -94,7 +96,7 @@ def mezcla_error(llista):
                 canviades = primera_lletra + ''.join(originals) + penultima_lletra + ultima_lletra
                 resultat_llista.append(canviades)
 
-        # Que sempre retorni algo, encara que no canvii la paraula.
+        # Que sempre retorni algo, encara que no canviï la paraula.
         else:
             resultat_llista.append(paraula)
 
