@@ -51,7 +51,7 @@ def mezcla_error(llista):
             # Tornem a deixar la paraula tal i com està si conté signes entre mig.
             if any(char in signes for char in originals):
                 resultat_llista.append(paraula)
-
+            # I si posem 2 signes al final? per exemple una paraula acaba amb ?,
             elif penultima_lletra in signes:
                 antep = paraula[-3]
                 originals = list(paraula[1: -3])
@@ -84,6 +84,8 @@ def mezcla_error(llista):
             # Tornem a deixar la paraula tal i com està si conté signes entre mig.
             if any(char in signes for char in originals):
                 resultat_llista.append(paraula)
+
+            # I si posem 2 signes al final? per exemple una paraula acaba amb ?,
             elif penultima_lletra in signes:
                 antep = paraula[-3]
                 originals = list(paraula[1: -3])
