@@ -30,6 +30,7 @@ def get_data_from_server():
 def get_data_from_chatGPT():
     """ Aquesta funció recull la resposta a una pregunta """
 
+
 #TODO al 3r lliurament
 def get_data_from_file():
     """ Aquesta funció recull les dades des d'un arxiu
