@@ -9,9 +9,10 @@ import crazy_words
 import data_source
 import definir_logs
 import resultat_fitxers
+import recorre_dir
 import logging
 from definir_logs import Logger
-def main():
+def main_1():
     try:
         text = data_source.get_data_from_file()
         llista_texto = crazy_words.dividir_llista_paraules(text)
@@ -19,5 +20,13 @@ def main():
         resultat_fitxers.resultat_file(resultat_final_llista)
     except:
         print("Error, no s'ha pogut completar l'acció, revisa el fitxer de logs")
+
+def main_2():
+    text = recorre_dir.recorrer_arbol_directorios()
+
+
+
+
+
 if __name__ == '__main__':
-    main()
+    main_1()
