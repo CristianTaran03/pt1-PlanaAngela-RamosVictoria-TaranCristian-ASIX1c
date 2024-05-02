@@ -10,10 +10,14 @@ import data_source
 import definir_logs
 import resultat_fitxers
 import logging
-
-logs = definir_logs
-text = data_source.get_data_from_file()
-llista_texto = crazy_words.dividir_llista_paraules(text)
-resultat_final_llista, primera_lletra, ultima_lletra, signes = crazy_words.mix_words(llista_texto)
-mix_words = crazy_words.resultat_string(resultat_final_llista)
-resultat_final = resultat_fitxers.resultat_file(mix_words)
+from definir_logs import Logger
+def main():
+    try:
+        text = data_source.get_data_from_file()
+        llista_texto = crazy_words.dividir_llista_paraules(text)
+        resultat_final_llista, primera_lletra, ultima_lletra, signes = crazy_words.mix_words(llista_texto)
+        resultat_fitxers.resultat_file(resultat_final_llista)
+    except:
+        print("Error, no s'ha pogut completar l'acció, revisa el fitxer de logs")
+if __name__ == '__main__':
+    main()

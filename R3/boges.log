@@ -1,0 +1,15 @@
+2024-04-30 12:05:53,143 DEBUG Debug message
+2024-04-30 12:05:53,143 INFO Informative message
+2024-04-30 12:05:53,143 ERROR Error message
+2024-04-30 12:05:53,143 WARNING Protocol problem: connection reset
+2024-05-02 09:11:39 | INFO | Dividir la llista de paraules
+2024-05-02 09:12:12 | INFO | Dividir la llista de paraules
+2024-05-02 09:12:12 | INFO | Completado con exito
+2024-05-02 09:12:31 | INFO | Dividir la llista de paraules
+2024-05-02 09:12:31 | INFO | Completado con exito
+2024-05-02 09:14:35 | ERROR | Error al llegir el fitxer
+2024-05-02 09:14:35 | ERROR | Error en la lectura del fitxer
+2024-05-02 09:16:08 | INFO | Dividir la llista de paraules
+2024-05-02 09:16:08 | INFO | Completado con exito
+2024-05-02 09:26:12 | ERROR | Error a mix_words
+2024-05-02 09:28:29 | INFO | Completado con exito
