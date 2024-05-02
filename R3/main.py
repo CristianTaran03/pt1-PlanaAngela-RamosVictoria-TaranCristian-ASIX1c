@@ -9,12 +9,11 @@ import crazy_words
 import data_source
 import definir_logs
 import resultat_fitxers
-try:
-    text = data_source.get_data_from_file()
-    llista_texto = crazy_words.dividir_llista_paraules(text)
-    resultat_final_llista, primera_lletra, ultima_lletra, signes = crazy_words.mix_words(llista_texto)
-    mix_words = crazy_words.resultat_string(resultat_final_llista)
-    resultat_final = resultat_fitxers.resultat_file(mix_words)
+import logging
 
-except:
-    definir_logs.logs()
+logs = definir_logs
+text = data_source.get_data_from_file()
+llista_texto = crazy_words.dividir_llista_paraules(text)
+resultat_final_llista, primera_lletra, ultima_lletra, signes = crazy_words.mix_words(llista_texto)
+mix_words = crazy_words.resultat_string(resultat_final_llista)
+resultat_final = resultat_fitxers.resultat_file(mix_words)

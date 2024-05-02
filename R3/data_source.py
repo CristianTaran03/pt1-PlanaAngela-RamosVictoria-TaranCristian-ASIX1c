@@ -10,9 +10,8 @@ Per tant, hauré d’implementar el mètode:
 def get_data_from_file():
     text = open('paraules.txt', mode='rt', encoding='utf-8')
     text = text.readlines()
-    print(text)
-    return text
-get_data_from_file()
+    text_str = " ".join(text)
+    return text_str
 
 """ Aquesta funció recull les dades des d'un arxiu
 Entrada: Una cadena de caràcters amb el nom del fitxer origen
