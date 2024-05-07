@@ -22,7 +22,11 @@ def main_1():
         print("Error, no s'ha pogut completar l'acció, revisa el fitxer de logs")
 
 def main_2():
-    text = recorre_dir.recorrer_arbol_directorios()
+    directori_arxius = recorre_dir.recorrer_arbol_directorios()
+    text = data_source.get_data_from_file_2(directori_arxius)
+    llista_texto = crazy_words.dividir_llista_paraules(text)
+    resultat_final_llista, primera_lletra, ultima_lletra, signes = crazy_words.mix_words(llista_texto)
+    resultat_fitxers.resultat_file(resultat_final_llista)
 
 
 
@@ -30,3 +34,4 @@ def main_2():
 
 if __name__ == '__main__':
     main_1()
+    main_2()

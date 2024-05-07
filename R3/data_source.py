@@ -16,4 +16,11 @@ def get_data_from_file():
     except:
         Logger.add_to_log('error', 'Error al llegir el fitxer')
 
+def get_data_from_file_2(arxiu):
+    try:
+        texto = open(arxiu, mode='rt', encoding='utf-8')
+        text = texto.read()
+        return text
+    except:
+        Logger.add_to_log('error', 'Error al llegir el fitxer')
 
