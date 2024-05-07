@@ -7,6 +7,7 @@ ASIXc M03 UF3 A2
 Per tant, hauré d’implementar el mètode:
 """
 from definir_logs import Logger
+import os
 
 def get_data_from_file():
     try:
@@ -14,13 +15,13 @@ def get_data_from_file():
         text = texto.read()
         return text
     except:
-        Logger.add_to_log('error', 'Error al llegir el fitxer')
+        Logger.add_to_log('error', 'Error de lectura del fichero paraules.txt')
 
-def get_data_from_file_2(arxiu):
-    try:
-        texto = open(arxiu, mode='rt', encoding='utf-8')
-        text = texto.read()
-        return text
-    except:
-        Logger.add_to_log('error', 'Error al llegir el fitxer')
-
+def create_directory():
+    directorio_entrada = "./entrada"
+    directorio_salida = "./sortida"
+    if not os.path.exists(directorio_salida):
+        os.makedirs(directorio_salida)
+    if not os.path.exists(directorio_entrada):
+        os.makedirs(directorio_entrada)
+    return directorio_entrada, directorio_salida

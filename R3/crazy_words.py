@@ -11,89 +11,76 @@ import random
 from definir_logs import Logger
 
 def dividir_llista_paraules(text):
-    try:
-        llista_text = text.split("\n")
-        return llista_text
-    except:
-        Logger.add_to_log('error', 'Error al dividir llista')
+    llista_text = text.split("\n")
+    return llista_text
+
 
 def palabra_simple(paraula, resultat_final_llista,signes, primera_lletra, ultima_lletra):
-    try:
-        originals = list(paraula[1: -1])
-        # Si qualsevol dels caràcters que hauríem de barrejar és un símbol, deixem la paraula tal com està. Així podem posar enllaços de webs, etc.
-        if any(char in signes for char in originals):
-            resultat_final_llista.append(paraula)
-        else:
-            random.shuffle(originals)
-            canviades = primera_lletra + ''.join(originals) + ultima_lletra
-            resultat_final_llista.append(canviades)
-            return resultat_final_llista
-    except:
-        Logger.add_to_log('error', 'Error a paraula simple')
+    originals = list(paraula[1: -1])
+    # Si qualsevol dels caràcters que hauríem de barrejar és un símbol, deixem la paraula tal com està. Així podem posar enllaços de webs, etc.
+    if any(char in signes for char in originals):
+        resultat_final_llista.append(paraula)
+    else:
+        random.shuffle(originals)
+        canviades = primera_lletra + ''.join(originals) + ultima_lletra
+        resultat_final_llista.append(canviades)
+        return resultat_final_llista
 
 def palabra_2_signes_finals(paraula, resultat_final_llista, signes, primera_lletra, ultima_lletra):
-    try:
-        segona_lletra = paraula[1]
-        penultima_lletra = paraula[-2]
-        originals = list(paraula[2: -2])
 
-        # Tornem a deixar la paraula tal i com està si conté signes entre mig.
-        if any(char in signes for char in originals):
-            resultat_final_llista.append(paraula)
-        # I si posem 2 signes al final? per exemple una paraula acaba amb ?,
-        elif penultima_lletra in signes:
-            antep = paraula[-3]
-            originals = list(paraula[1: -3])
-            random.shuffle(originals)
-            canviades = primera_lletra + ''.join(originals) + antep + penultima_lletra + ultima_lletra
-            resultat_final_llista.append(canviades)
-        else:
-            random.shuffle(originals)
-            canviades = primera_lletra + segona_lletra + ''.join(originals) + penultima_lletra + ultima_lletra
-            resultat_final_llista.append(canviades)
-            return resultat_final_llista
-    except:
-        Logger.add_to_log('error', 'Error a palabra_2_signes_finals')
+    segona_lletra = paraula[1]
+    penultima_lletra = paraula[-2]
+    originals = list(paraula[2: -2])
+
+    # Tornem a deixar la paraula tal i com està si conté signes entre mig.
+    if any(char in signes for char in originals):
+        resultat_final_llista.append(paraula)
+    # I si posem 2 signes al final? per exemple una paraula acaba amb ?,
+    elif penultima_lletra in signes:
+        antep = paraula[-3]
+        originals = list(paraula[1: -3])
+        random.shuffle(originals)
+        canviades = primera_lletra + ''.join(originals) + antep + penultima_lletra + ultima_lletra
+        resultat_final_llista.append(canviades)
+    else:
+        random.shuffle(originals)
+        canviades = primera_lletra + segona_lletra + ''.join(originals) + penultima_lletra + ultima_lletra
+        resultat_final_llista.append(canviades)
+        return resultat_final_llista
 
 def palabra_2_signes_primera_lletra(paraula, resultat_final_llista, signes, primera_lletra, ultima_lletra):
-    try:
-        segona_lletra = paraula[1]
-        originals = list(paraula[2: -1])
+    segona_lletra = paraula[1]
+    originals = list(paraula[2: -1])
 
-        # Tornem a deixar la paraula tal i com està si conté signes entre mig.
-        if any(char in signes for char in originals):
-            resultat_final_llista.append(paraula)
-        else:
-            random.shuffle(originals)
-            canviades = primera_lletra + segona_lletra + ''.join(originals) + ultima_lletra
-            resultat_final_llista.append(canviades)
-            return resultat_final_llista
-    except:
-        Logger.add_to_log('error', 'Error a palabra_2_signes_primera_lletra')
+    # Tornem a deixar la paraula tal i com està si conté signes entre mig.
+    if any(char in signes for char in originals):
+        resultat_final_llista.append(paraula)
+    else:
+        random.shuffle(originals)
+        canviades = primera_lletra + segona_lletra + ''.join(originals) + ultima_lletra
+        resultat_final_llista.append(canviades)
+        return resultat_final_llista
 
 def palabra_2_signes_ultima_lletra(paraula, resultat_final_llista, signes, primera_lletra, ultima_lletra):
-    try:
-        penultima_lletra = paraula[-2]
-        originals = list(paraula[1: -2])
+    penultima_lletra = paraula[-2]
+    originals = list(paraula[1: -2])
 
-        # Tornem a deixar la paraula tal i com està si conté signes entre mig.
-        if any(char in signes for char in originals):
-            resultat_final_llista.append(paraula)
+    # Tornem a deixar la paraula tal i com està si conté signes entre mig.
+    if any(char in signes for char in originals):
+        resultat_final_llista.append(paraula)
 
-        # I si posem 2 signes al final? per exemple una paraula acaba amb ?,
-        elif penultima_lletra in signes:
-            antep = paraula[-3]
-            originals = list(paraula[1: -3])
-            random.shuffle(originals)
-            canviades = primera_lletra + ''.join(originals) + antep + penultima_lletra + ultima_lletra
-            resultat_final_llista.append(canviades)
-        else:
-            random.shuffle(originals)
-            canviades = primera_lletra + ''.join(originals) + penultima_lletra + ultima_lletra
-            resultat_final_llista.append(canviades)
-            return resultat_final_llista
-    except:
-        Logger.add_to_log('error', 'Error a palabra_2_signes_ultima_lletra')
+    # I si posem 2 signes al final? per exemple una paraula acaba amb ?,
+    elif penultima_lletra in signes:
+        antep = paraula[-3]
+        originals = list(paraula[1: -3])
+        random.shuffle(originals)
+        canviades = primera_lletra + ''.join(originals) + antep + penultima_lletra + ultima_lletra
+        resultat_final_llista.append(canviades)
+    else:
+        random.shuffle(originals)
+        canviades = primera_lletra + ''.join(originals) + penultima_lletra + ultima_lletra
+        resultat_final_llista.append(canviades)
+        return resultat_final_llista
 
 def mix_words(llista_text):
     try:
@@ -130,4 +117,4 @@ def mix_words(llista_text):
             resultat_final_llista.append(resultat_llista)
         return resultat_final_llista, primera_lletra, ultima_lletra, signes
     except:
-        Logger.add_to_log('error', 'Error a mix_words')
+        Logger.add_to_log('error', 'Error en mix_words')
